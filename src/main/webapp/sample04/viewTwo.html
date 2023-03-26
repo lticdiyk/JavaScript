@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body bgcolor="green">
+
+<h1>View Two</h1>
+
+<input type="button" value="이전" onclick="back()">
+
+<input type="button" value="현재페이지 갱신" onclick="reload()">
+
+<input type="button" value="진행" onclick="forward()">
+
+<input type="button" value="view three로 이동" onclick="gopage()">
+
+<script type="text/javascript">
+function back() {
+	history.back();
+}
+function reload() {
+	location.reload();
+}
+function forward() {  // = 전진
+	history.forward();
+}
+function gopage() {
+	location.href = "viewThree.html";
+}
+</script>
+
+</body>
+</html>
+
+

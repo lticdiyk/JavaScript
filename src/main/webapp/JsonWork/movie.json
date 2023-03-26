@@ -1,0 +1,32 @@
+[
+	{
+		"title":"신세계",
+		"score": 9.5,
+		"openday":"2013/05/21",
+		"director":"박훈정"
+	},
+	{
+		"title":"범죄도시2",
+		"score": 9.0,
+		"openday":"2022/05/18",
+		"director":"이상용"
+	},
+	{
+		"title":"타이타닉",
+		"score": 9.88,
+		"openday":"1998/02/20",
+		"director":"제임스 카메론"
+	},
+	{
+		"title":"탑건:매버릭",
+		"score": 9.6,
+		"openday":"2022/06/22",
+		"director":"조셉 코신스키"
+	},
+	{
+		"title":"아바타",
+		"score": 8.82,
+		"openday":"2022/12/14",
+		"director":"제임스 카메론"
+	}
+]

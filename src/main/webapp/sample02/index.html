@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+function(함수)
+<br><br>
+
+<button type="button" onclick="func()">함수호출</button>
+
+<script type="text/javascript">
+function func() {
+	console.log('func() 호출');
+}
+
+// func();
+
+let num1 = 10;
+let num2 = 3;
+
+function multi(n1, n2) {
+	return n1 * n2;
+}
+
+let r = multi(num1, num2);
+console.log(r);
+
+</script>
+
+<br><br>
+
+<button type="button" onclick="btnclick( 'one' )">버튼 one</button>
+<button type="button" onclick="btnclick( 'two' )">버튼 two</button>
+<button type="button" onclick="btnclick( 'three' )" )">버튼 three</button>
+
+<script type="text/javascript">
+function btnclick( n ) {
+	if(n == "one"){
+		console.log("버튼 one 을 클릭했습니다");
+	}else if(n == "two"){
+		console.log("버튼 two 을 클릭했습니다");
+	}else if(n == "three"){
+		console.log("버튼 three 을 클릭했습니다");
+	} 
+}
+
+</script>
+
+
+</body>
+</html>
+
+
+
+

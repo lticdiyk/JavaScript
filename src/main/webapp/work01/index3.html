@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+<style type="text/css">
+body{
+	background-color: #000;
+	color: #fff;
+}
+</style>
+ -->
+</head>
+<body bgcolor="#000" text="#fff">
+
+<h1>사진들</h1>
+
+<table>
+<tr>
+	<td>
+		<img alt="" width="320" height="480" id="photo" src="./images/image01.jpg">
+	</td>
+
+	<td valign="top">
+		사진의 선택<br>
+		<select id="picture" onchange="photoChange()">
+			<option>사진선택</option>
+			<option value="image01.jpg">일반건물밖</option>
+			<option value="image02.jpg">일반건물안</option>
+			<option value="image03.jpg">성당밖</option>	
+			<option value="image04.jpg">성당안</option>	
+		</select>
+	</td>
+<tr>
+</table>
+
+<script type="text/javascript">
+function photoChange() {
+	// alert('변경!');
+	
+	let picture = document.getElementById("picture").value;
+	// alert(picture);
+	
+	let selectIndex = document.getElementById("picture").selectedIndex;
+	// alert(selectIndex);
+	
+	if(selectIndex != 0){		
+		document.getElementById("photo").src = "./images/" + picture;
+	}
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+

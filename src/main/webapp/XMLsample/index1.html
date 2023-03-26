@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<button type="button" onclick="loadTextDoc()">내용보기</button>
+
+<script type="text/javascript">
+function loadTextDoc() {
+	
+	// Ajax
+	let xhttp = new XMLHttpRequest();
+		 
+	xhttp.onreadystatechange = function () {
+	//	console.log(this.responseText); // 읽어온 데이터
+	//	console.log(this.status);   // 200
+	//	console.log(this.readyState); // 0 ~ 4
+	
+		if(this.readyState == 4 && this.status == 200){
+			document.getElementById("demo").innerHTML = this.responseText;
+		}		
+	}
+	xhttp.open("GET", "test.txt", true);
+	console.log("xhttp.open");
+	
+	xhttp.send();
+	console.log("xhttp.send");	
+}
+/*
+	status
+	200 : success
+	403 : 접근금지
+	404 : 없음. 못찾겠음
+	500 : 구문에러. 문법이 틀렸음
+	
+	readyState
+	0	-> open 함수를 수행하기 전
+	1	-> loading 중...
+	2	-> loading 완료
+	3 	-> server 처리중
+	4	-> server 처리완료
+*/
+</script>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+변수(variable)
+<br>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+// Integer, Double, String, Character, Boolean, Array, class
+/*
+	MyClass mcls = new MyClass();
+	YouClass ycls = new YouClass();
+	
+	Object obj = new MyClass();
+	
+	var v = 123;
+	var v1 = "hello";
+	
+	let
+*/
+
+/*
+	var v;
+	v = 123;	
+	// alert(v);
+	
+	var v = 345;
+	// alert(v);
+		
+	
+	let l;
+	l = 234;
+	//alert(l);
+	
+	let l = 456;
+	alert(l);
+*/
+
+	let number = 123;
+	let pi = 3.141592;
+	let name = '홍길동';
+	let answer = true;  // false(0)/true(1)
+	
+	// alert(number + pi);
+	// alert(number + answer);
+
+	number = 234 + 345;
+	// alert(number);
+	number = name + pi;
+	// alert(number);
+	
+	number = "hello";
+	
+	number = "5" + 3 + 1;
+	// alert(number);
+	
+	number = 5 + 3 + "1";
+	// alert(number);
+	
+	
+	// Array == object
+	/*
+		int array[] = new int[5];
+		int array[] = { 1, 2, 3, 4, 5 };
+	*/
+	
+//	let cars = [];
+	let cars = [ "benz", 'bmw', 'saab' ];
+	console.log(cars[1]);
+	
+	let arrNum = new Array(5);
+	arrNum[0] = 11;
+	arrNum[1] = 22;
+	arrNum[2] = 33;
+	arrNum[3] = 44;
+	arrNum[4] = 55;
+	console.log(arrNum[2]);
+	console.log(arrNum);
+	
+	for(i = 0;i < arrNum.length; i++){
+		console.log(arrNum[i]);		
+	}
+	
+	for(i in cars){
+		console.log(cars[i]);
+	}
+	
+	// 람다식
+	cars.forEach(element=>console.log(element));
+	
+	// key:value -> json(Hashmap)
+	let myobj = {
+			firstname:"길동",
+			lastname:"홍",
+			age:24,
+			print:function(){
+				console.log('print() 호출');
+			}
+	}
+	
+	console.log( myobj.firstname );
+	console.log( myobj.age );
+	
+	myobj.print();
+	
+	
+	class Person{		
+		constructor(name, age){
+			this.name = name;
+			this.age = age;
+		}
+		print(){
+			console.log(this.name + " " + this.age);	
+		}		
+	}
+	
+	let p = new Person("성춘향", 16);
+	console.log( p.name );
+	p.print();
+	
+	document.getElementById("demo").innerHTML = "홍길동 " + typeof "홍길동" + "<br>"
+											+	"325 " + typeof 325 + "<br>"
+											+ 	"3.14 " + typeof 3.14 + "<br>"
+											+	"true " + typeof true + "<br>"
+											+	"array " + typeof cars + "<br>"
+											+ 	"object " + typeof {num:1, name:"abc"}; 
+	
+	
+</script>
+
+</body>
+</html>
+
+
+
+

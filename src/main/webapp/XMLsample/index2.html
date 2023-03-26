@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+
+let xmltext = 	"<books>" +
+					"<book>" +
+						"<title>탈무드</title>" +
+						"<author>man</author>" +
+						"<year>2001</year>" +
+					"</book>" +
+					"<book>" +
+						"<title>이솝이야기</title>" +
+						"<author>woman</author>" +
+						"<year>2004</year>" +
+					"</book>" +
+				"</books>";
+				
+// alert(xmltext);		// string
+
+let parser, xmlDoc;
+
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(xmltext, "text/html");
+
+// alert(xmlDoc);		// xml(object)
+
+document.getElementById("demo").innerHTML 
+//	= xmlDoc.getElementsByTagName("book")[1].childNodes[0].nodeName; // title
+//	= xmlDoc.getElementsByTagName("book")[1].childNodes[1].nodeName; // author
+
+//	= xmlDoc.getElementsByTagName("book")[1].childNodes[0].childNodes[0].nodeValue; // 이솝이야기
+//	= xmlDoc.getElementsByTagName("book").length; // 데이터의 길이
+	= xmlDoc.getElementsByTagName("book")[1].childNodes.length; // 컬럼의 갯수
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

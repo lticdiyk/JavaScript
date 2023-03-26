@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+		movie.json
+		
+		본 영화 5개 
+			제목 : title
+			평점 : score
+			개봉일 : openday
+			감독 : director
+ -->
+
+<div id="movies">
+</div>
+
+<script type="text/javascript">
+
+let xhttp = new XMLHttpRequest();
+
+xhttp.onreadystatechange = function () {
+	if(this.readyState == 4 && this.status == 200){
+		movieFunc( this );
+	}	
+}
+xhttp.open("GET", "movie.json", true);
+xhttp.send();
+
+function movieFunc( resp ) {	
+	let jsonDoc = resp.responseText;
+	// alert(jsonDoc);
+	
+	let json = JSON.parse(jsonDoc);	// parsing
+	// alert(json);
+	
+	let table = "<table border='1'>";
+	table += "<col width='50'><col width='140'><col width='80'><col width='100'><col width='70'>";
+	
+	table += "<tr>";
+	table += "<th>번호</th>";
+	
+	for(key in json[0]){
+		table += "<th>" + key + "</th>";	
+	}
+	
+	table += "</tr>";
+	
+	// datas
+	
+	for(i = 0;i < json.length; i++){
+	
+		table += "<tr>";		
+		table += "<th>" + (1 + i) + "</th>";
+		
+		/*
+		table += "<td>" + json[0].title + "</td>";
+		table += "<td>" + json[1].score + "</td>";
+		table += "<td>" + json[2].openday + "</td>";
+		table += "<td>" + json[3].director + "</td>";
+		*/
+		
+		for(key in json[0]){
+			table += "<td>" + json[i][key] + "</td>";
+		}
+		
+		table += "</tr>";
+	}
+	
+	table += "</table>";	
+	
+	document.getElementById("movies").innerHTML = table;	
+}
+
+</script>
+
+
+</body>
+</html>
+
+
+
+

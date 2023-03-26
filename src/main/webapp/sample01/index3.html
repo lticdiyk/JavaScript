@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+	tag : 	일반태그(출력)	: h1 ~ h6, p, pre 
+			입출력태그 : 	input type="text, radio, checkbox"
+						textarea
+			event태그 : 	button, input type="button"
+ -->
+ 
+<h3 id="demo">Hello JS</h3> 
+
+<p id="demo">p tag</p>
+
+<input type="text" id="text" size="20" value="초기값" placeholder="입력">
+<br><br>
+
+<!-- <button type="button" onclick="buttonClick()">클릭</button> -->
+<input type="button" value="클릭" onclick="buttonClick()">
+
+<script type="text/javascript">
+function buttonClick() {
+	// alert("buttonClick() 호출");
+	
+//	document.getElementById("demo").innerHTML = "버튼 클릭!";
+	document.getElementById("demo").innerText = "버튼 클릭!";
+	
+	document.getElementById("text").value = "안녕하세요";	
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

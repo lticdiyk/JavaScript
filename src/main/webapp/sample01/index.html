@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+//java script의 영역
+
+</script>
+
+</head>
+<body>
+
+<!-- 
+		Java Script(front-end) == Client(Web) 처리언어
+		목적 : 	web resource에 접근하고 처리하기 위한 스크립트
+				tag들을 접근해서 데이터를 취득, 수정, 검색
+				컴파일을 하지 않는다 -> (처리속도가)빠르다 -> 가볍다
+				
+		예) 	회원가입 -> 빈칸조사, id의 글자나 종류, password 검사
+			CSS 를 제어
+			Timer를 설정하고 특수 효과도 구현이 가능 
+			
+		Java Script -> Jquery -> 	angular.js 
+					   ajax			react.js  	axios
+									vue.js
+									
+		variable
+		function
+		class
+		
+		tag의 접근자	Attribute(속성), Property(특성)
+		
+		<p id="pid">Hello</p>
+		<h2 class="hcls">World</h2>
+		<p class="hcls">Hello</p>
+		<input type="text" name="food">
+		
+		id		: Java Script에서 접근하기 위해서 주로 사용. 1개만 적용	
+		class   : CSS를 적용하는 경우 사용. 다수
+		name    : 값을 넘겨줄 경우에 사용. 다수
+
+ -->
+ 
+<p id="demo">안녕하세요 JavaScript</p>
+ 
+<script type="text/javascript">
+// java script의 영역
+
+/*
+	범위 주석문
+*/
+
+console.log("Java Script가 실행되었음");
+
+// alert("Java Script 실행");
+
+var demo = document.getElementById("demo").innerHTML;  // getter
+alert(demo);
+
+document.getElementById("demo").innerHTML = "hi 자바스크립트";
+
+</script>
+
+
+</body>
+</html>
+
+
+
+

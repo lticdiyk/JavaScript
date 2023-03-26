@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>변수의 연산</h3>
+a, b에 대해서 변수 a와 b의 계산 결과를 표시합니다.
+<br><br>
+
+<button type="button" onclick="proc(1)">덧셈</button>
+<button type="button" onclick="proc(2)">뺄셈</button>
+<button type="button" onclick="proc(3)">곱셈</button>
+<button type="button" onclick="proc(4)">나눗셈</button>
+<button type="button" onclick="proc(5)">나머지</button>
+<br><br>
+
+<input type="text" id="a" size="10">
+<input type="text" id="oper" size="5" readonly="readonly">
+<input type="text" id="b" size="10">
+=
+<input type="text" id="result" size="20" readonly="readonly">
+
+<script type="text/javascript">
+
+function proc( oper ) {	
+	// 빈칸 조사
+	let a_val = document.getElementById('a').value;
+	let b_val = document.getElementById('b').value;
+	
+	if(a_val.trim() == "" || b_val == ""){
+		alert('숫자를 입력해 주십시오');
+		return;
+	}
+	
+	// 입력된 숫자
+	let a = parseInt(a_val);
+	let b = parseInt(document.getElementById('b').value);
+	let result = 0;
+	let op = "+";
+	
+	if(oper == 1){
+		result = a + b;
+		op = "+";
+	}else if(oper == 2){
+		result = a - b;
+		op = "-";
+	}else if(oper == 3){
+		result = a * b;
+		op = "*";
+	}else if(oper == 4){
+		if(b == 0){
+			alert("계산할 수 없습니다. 다시 입력해 주세요");
+			document.getElementById('b').value = "";
+			return;
+		}
+		
+		result = a / b;
+		op = "/";
+	}else{
+		result = a % b;
+		op = "%";
+	}
+	
+	document.getElementById("oper").value = op;
+	document.getElementById("result").value = result;	
+}
+
+
+</script>
+
+</body>
+</html>
+
+
+

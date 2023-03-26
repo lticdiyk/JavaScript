@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+		자신이 읽은(관심있는) (만화)책 : 5권 
+					xml 파일 저장
+					
+					title
+					author
+					date
+					price
+					
+		읽어 들이고
+		
+		tag 값을 취득(column)
+		
+		data들을 배열에 저장하고 
+		
+		table로 시각화를 한다.
+ --> 
+<div id="demo">
+</div>
+
+<script type="text/javascript">
+
+let xhttp = new XMLHttpRequest();
+
+xhttp.onreadystatechange = function () {
+	if(this.readyState == 4 && this.status == 200){
+		xmlProc( xhttp );
+	}	
+}
+xhttp.open("GET", "books.xml", true);
+xhttp.send();
+
+function xmlProc( xml ) {
+	
+	let xmlDoc = xml.responseXML;
+	// alert(xmlDoc);
+	
+	// root명 취득
+	let rootTagName = xmlDoc.documentElement.nodeName;
+	// alert(rootTagName);
+	
+	// node명 취득
+	let nodeArr = xmlDoc.documentElement.childNodes;
+	//alert(nodeArr);
+	
+	// node list 확인
+	let nodeName;
+	for(i = 0;i < nodeArr.length; i++){
+		if(nodeArr[i].nodeType == 1){
+			nodeName = nodeArr[i].nodeName;
+			console.log(nodeName);
+		}
+	} 
+	
+	// table을 준비
+	let table = "<table border='1'>";
+	table += "<col width='50'><col width='100'><col width='140'><col width='100'><col width='140'>";
+	table += "<tr>";
+	table += 	"<th>번호</th>";
+	
+	// column명(tag명)을 취득
+	columnName = xmlDoc.getElementsByTagName(nodeName)[0];
+	
+	let child = columnName.firstChild;
+	console.log(columnName.childNodes.length);
+	
+	for(i = 0;i < columnName.childNodes.length; i++){
+		if(child.nodeType == 1){
+			table += "<th>" + child.nodeName + "</th>";	
+			console.log(child.nodeName);
+		}		
+		child = child.nextSibling;
+	}		
+	
+	table += "</tr>";
+	
+	// data 출력
+	let len = xmlDoc.getElementsByTagName(nodeName).length;
+	console.log(len);
+	
+	for(i = 0;i < len; i++){
+	
+		table += "<tr>";
+		table += "<th>" + (1 + i) + "</th>";
+		
+		let dataArr = xmlDoc.getElementsByTagName(nodeName)[i];
+		
+		child = dataArr.firstChild;
+		for(j = 0;j < dataArr.childNodes.length; j++){
+			if(child.nodeType == 1){
+				table += "<td>" + child.childNodes[0].nodeValue + "</td>";
+			}
+			child = child.nextSibling;
+		}
+		
+		table += "</tr>";
+	}
+	
+	table += "</table>"
+	
+	
+	document.getElementById("demo").innerHTML = table;	
+}
+
+
+	
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

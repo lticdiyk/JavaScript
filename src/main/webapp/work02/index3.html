@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>10진수를 2진수, 8진수, 16진수로 변환</h3>
+
+<table>
+<tr>
+	<th>10진수:</th>
+	<td><input type="text" size="30" id="num10"></td>
+</tr>
+<tr>
+	<th>2진수:</th>
+	<td><span id="num2"></span></td>
+</tr>
+<tr>
+	<th>8진수:</th>
+	<td><span id="num8"></span></td>
+</tr>
+<tr>
+	<th>16진수:</th>
+	<td><span id="num16"></span></td>
+</tr>
+</table>
+<br>
+<button type="button" onclick="proc()">결과</button>
+
+<script type="text/javascript">
+function proc() {
+	
+	let num10 = parseInt( document.getElementById("num10").value );
+	
+	document.getElementById("num2").innerText = num10.toString(2);
+	
+	document.getElementById("num8").innerText = "0" + num10.toString(8);
+	
+	document.getElementById("num16").innerText = "0x" + num10.toString(16).toUpperCase();
+}
+</script>
+
+
+</body>
+</html>
+
+
+
+
+

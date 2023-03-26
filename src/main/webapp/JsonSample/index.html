@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+		JSON : Java Script Object Notation
+									표기법
+
+Java Script Object 
+<script type="text/javascript">
+let jsObj = {
+		"name":"홍길동",
+		"age":24,
+		"count":[ 95, 100, 75 ],
+		func:function(){
+			console.log("function() 호출");
+		}
+}
+console.log(jsObj.name);
+console.log(jsObj.count[1]);
+</script> 
+
+	한쌍(pair) key:value == HashMap(java)
+
+	[ 11, 22, 33 ]
+	[ "홍길동", 24, "서울시" ] -> [ "name":"홍길동", "age":24, "address":"서울시" ]
+	{ name:"홍길동", age:24, address:"서울시" }
+
+<script type="text/javascript"> 
+let array = [ "홍길동", 24, "서울시" ];
+console.log(array[1]);
+</script>
+
+{ name:"홍길동" }
+
+[
+	{ name:"홍길동", age:24, address:"서울시" },
+	{ name:"성춘향", age:16, address:"남원시" },
+	{ name:"일지매", age:22, address:"부산시" }
+]
+ -->
+ 
+<p id="demo"></p>
+
+<script type="text/javascript">
+/*
+	let str = '{ "name":"홍길동", "age":24, "address":"서울시"  }';
+//	alert(str);
+	
+	// string -> json
+	let json = JSON.parse(str); // <- parsing
+//	alert(json);
+	
+	document.getElementById("demo").innerHTML = json.address;
+*/
+
+let json = [
+	{
+		"name":"홍길동",
+		"age":24,
+		"height":172.2
+	},
+	{
+		"name":"성춘향",
+		"age":16,
+		"height":156.9
+	},
+	{
+		"name":"일지매",
+		"age":22,
+		"height":181.3
+	}
+];
+
+document.getElementById("demo").innerHTML = json[1].name + " " + json[1].height;
+
+</script> 
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
